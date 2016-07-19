@@ -1,0 +1,32 @@
+<Entities>
+	<ExtensionPackages>
+		<ExtensionPackage name="HelloWorld_Extension"
+						  description="HelloWorld Extension. Sample extension."
+						  vendor="ThingWorx Customer Service"
+						  packageVersion="1.0" 
+						  minimumThingWorxVersion="5.0.0" >
+			<JarResources>
+				<FileResource type="JAR" file="thingworx-helloworld-extension.jar" description="HelloWorld ThingPackage JAR" />
+			</JarResources>
+		</ExtensionPackage>
+	</ExtensionPackages>
+	<ThingPackages>
+		<ThingPackage name="HelloWorldThing" description="Sample Extension" className="com.helloinc.things.helloworld.HelloWorldThing" aspect.isSystemObject="false" aspect.isCreatable="true" />
+		<ThingPackage name="GoodByeThing" description="Sample Extension" className="com.helloinc.things.goodbye.GoodByeThing" aspect.isSystemObject="false" aspect.isCreatable="true" />
+	</ThingPackages>
+	<ThingTemplates>
+		<ThingTemplate name="HelloWorld" description="HelloWorld Template" thingPackage="HelloWorldThing" aspect.isSystemObject="false">
+			<avatar/>
+		</ThingTemplate>
+		<ThingTemplate name="GoodBye" description="GoodBye Template" thingPackage="GoodByeThing" aspect.isSystemObject="false">
+			<avatar/>
+		</ThingTemplate>
+	</ThingTemplates>
+	<DataShapes>
+		<DataShape name="SalutationSentEvent" description="Hello World salutation event" aspect.isSystemObject="false">
+			<FieldDefinitions>
+				<FieldDefinition name="userGreeted" description="Name of user receiving the salutation" baseType="STRING" aspect.isPrimaryKey="true"/>
+			</FieldDefinitions>
+		</DataShape>
+	</DataShapes>
+</Entities>
